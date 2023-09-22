@@ -1,0 +1,40 @@
+import java.util.*;
+
+public class N {
+
+	static int notContains(Integer arr[]) {
+		Arrays.sort(arr);
+		int ans=1;
+		for(int i=0; i<arr.length;i++) {
+		
+			if(arr[i]==ans)	ans++;
+			
+			else break;
+		} 
+		
+		return ans;
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		int n = scan.nextInt();
+		
+		Set <Integer> set = new HashSet<Integer>();
+		
+		for(int i=0; i<n; i++) {
+		int x=scan.nextInt();
+		
+		if(x>0) set.add(x);
+		}
+		
+		Integer ar[] = set.toArray(new Integer[0]);
+		
+		System.out.println(notContains(ar));
+		
+		scan.close();
+	}
+
+}
